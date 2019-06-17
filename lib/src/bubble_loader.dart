@@ -30,18 +30,21 @@ import 'package:flutter/material.dart';
 /// it avoids background use of 'SetState' causing warnings, errors, and efficiency loss
 ///
 class BubbleLoader extends StatefulWidget {
-  final _BubbleLoaderState _state = _BubbleLoaderState();
+  AnimationController controller;
 
   /// Forces the state to clean and dispose
   /// (not forcefully)
-  void stopAnimation() => _state.stopAnimation();
+  void dispose() {
+    if (controller?.isAnimating ?? false) {
+      controller?.dispose();
+    }
+  }
 
   @override
-  _BubbleLoaderState createState() => _state;
+  _BubbleLoaderState createState() => _BubbleLoaderState();
 }
 
 class _BubbleLoaderState extends State<BubbleLoader> with SingleTickerProviderStateMixin {
-  AnimationController controller;
   Animation<double> rotation;
 
   /// Radius of the loader circle
@@ -52,7 +55,7 @@ class _BubbleLoaderState extends State<BubbleLoader> with SingleTickerProviderSt
     super.initState();
 
     // The complete circular animation lasts 2 seconds
-    controller = AnimationController(
+    widget.controller = AnimationController(
       lowerBound: 0.0,
       upperBound: 1.0,
       duration: const Duration(seconds: 2),
@@ -61,13 +64,13 @@ class _BubbleLoaderState extends State<BubbleLoader> with SingleTickerProviderSt
 
     rotation = Tween(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
-        parent: controller,
+        parent: widget.controller,
         curve: Interval(0.0, 1.0, curve: Curves.linear),
       ),
     );
 
-    controller.addListener(() => setState(() {}));
-    controller.repeat();
+    widget.controller.addListener(() => setState(() {}));
+    widget.controller.repeat();
   }
 
   @override
@@ -86,11 +89,6 @@ class _BubbleLoaderState extends State<BubbleLoader> with SingleTickerProviderSt
 
   @override
   void dispose() {
-    if (controller?.isAnimating ?? false) {
-      controller?.dispose();
-    }
-
-    widget.stopAnimation();
     super.dispose();
   }
 

@@ -3,17 +3,13 @@
 //                                                                                                 .
 // Coded by : Alexandre BOLOT                                                                      .
 //                                                                                                 .
-// Last Modified : 6/16/19 12:41 PM	                                                               .
+// Last Modified : 6/17/19 4:23 AM	                                                                .
 //                                                                                                 .
 // Contact : bolotalex06@gmail.com                                                                 .
 //..................................................................................................
 
 import 'package:flutter/material.dart';
-import 'package:flutter_stash/src/bubble_loader.dart';
-import 'package:flutter_stash/src/shared.dart';
-
-const String _nextRouteEmpty = 'At least one of [nextRouteName] or [nextRoute] must not be null or empty';
-const String _nextRouteTwice = 'At most one of [nextRouteName] or [nextRoute] must not be null or empty';
+import 'package:flutter_stash/flutter_stash.dart';
 
 class SplashScreen extends StatefulWidget {
   /// Use this for easier access from Named-Routes navigation
@@ -29,8 +25,6 @@ class SplashScreen extends StatefulWidget {
   final List<Function> loadFunctions;
 
   const SplashScreen({this.title = '', this.nextRouteName = '', this.nextRoute, this.loadFunctions = const []});
-      //: assert(nextRouteName != '' || nextRoute == null, _nextRouteEmpty);
-        //assert(!(nextRouteName ?? '' != '' && nextRoute == null), _nextRouteTwice);
 
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -97,7 +91,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     }
 
     // Stop the loader animation
-    loader.stopAnimation();
+    loader.dispose();
 
     // Navigate to the next page here
     if (widget.nextRouteName != null)
