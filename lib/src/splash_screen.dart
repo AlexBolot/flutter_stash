@@ -28,9 +28,9 @@ class SplashScreen extends StatefulWidget {
 
   final List<Function> loadFunctions;
 
-  const SplashScreen({this.title = '', this.nextRouteName = '', this.nextRoute, this.loadFunctions = const []})
-      : assert(nextRouteName != '' || nextRoute == null, _nextRouteEmpty),
-        assert(!(nextRouteName ?? '' != '' && nextRoute == null), _nextRouteTwice);
+  const SplashScreen({this.title = '', this.nextRouteName = '', this.nextRoute, this.loadFunctions = const []});
+      //: assert(nextRouteName != '' || nextRoute == null, _nextRouteEmpty);
+        //assert(!(nextRouteName ?? '' != '' && nextRoute == null), _nextRouteTwice);
 
   @override
   _SplashScreenState createState() => _SplashScreenState();
