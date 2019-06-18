@@ -1,0 +1,14 @@
+name : testclass
+description : New Test area
+
+template :
+
+import 'package:flutter_test/flutter_test.dart';
+
+final String testGroupName = '$GROUP_NAME$';
+
+main() {
+  testWidgets('$DESCRIPTION$', (WidgetTester tester) async {
+    $END$
+  });
+}

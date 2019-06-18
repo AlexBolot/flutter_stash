@@ -1,0 +1,41 @@
+name : model
+description : New model Class with useful methods
+
+
+template :
+
+class $NAME$ {
+  $TYPE1$ $PARAM1$;
+  $TYPE2$ $PARAM2$;
+
+  $NAME$({this.$PARAM1$, this.$PARAM2$});
+
+  /// Name constructor to build an instance using a Map (useful to build from JSON)
+  $NAME$.fromMap(Map data) {
+    this.$PARAM1$ = data['$PARAM1$'];
+    this.$PARAM2$ = data['$PARAM2$'];
+  }
+
+  /// Returns a Map containing the attributes of this instance
+  /// (useful to parse this as JSON)
+  Map toMap() {
+    return {
+      '$PARAM1$': this.$PARAM1$,
+      '$PARAM2$': this.$PARAM2$,
+    };
+  }
+
+  @override
+  String toString() {
+    return '$NAME${$PARAM1$: ${$PARAM1$}, $PARAM2$: ${$PARAM2$}}';
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is $NAME$ && runtimeType == other.runtimeType && $PARAM1$ == other.$PARAM1$ && $PARAM2$ == other.$PARAM2$;
+
+  @override
+  int get hashCode => $PARAM1$.hashCode ^ $PARAM2$.hashCode;
+}
+

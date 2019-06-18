@@ -1,0 +1,35 @@
+name : view
+description : New Page widget
+
+template :
+
+import 'package:flutter/material.dart';
+
+class $NAME$ extends StatefulWidget {
+
+   /// Use this for easier access from Named-Routes navigation
+   static const String routeName = "/$NAME$";
+
+   /// Text displayed as title of this view (in the appbar)
+   /// Default is empty string
+   final String title;
+
+   const $NAME$ ({this.title = '$NAME$ page'});
+
+  @override
+  _$NAME$State createState() => _$NAME$State();
+}
+
+class _$NAME$State extends State<$NAME$> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(widget.title)),
+      body: Container (
+        child : Center (
+          child : Text(widget.title),
+        ),
+      ),
+    );
+  }
+}

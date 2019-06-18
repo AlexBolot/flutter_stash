@@ -1,0 +1,27 @@
+name : doc
+
+
+template :
+/// <br>
+/// $TITLE$
+///
+/// * [$PARAM$] - $END$
+///
+
+
+
+
+usage  :
+
+Creates a Dart documentation pattern
+
+/// <br>
+/// Returns the [n] first characters of a given [string]
+///
+/// * [n] - Number of characters to return
+/// * [string] - String value to extract the characters from
+///
+String extract(int n, String string){
+    return string.substring(0, n);
+}
+
