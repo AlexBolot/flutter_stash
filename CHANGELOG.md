@@ -9,3 +9,8 @@
 ## [0.0.3] - Fixing loop in BubbleLoader
 
 * On some occasions BubbleLoader created infinite loops... Fixed that :)
+
+## [1.0.0] - Paperwork-day
+
+* Upgrading README.md 
+* Upgrading some documentation

@@ -20,13 +20,22 @@ class TooltipText extends StatelessWidget {
   final TextStyle style;
   final TextAlign textAlign;
 
-  const TooltipText({@required this.text, this.tooltip, this.style, this.textAlign});
+  const TooltipText({
+    @required this.text,
+    this.tooltip,
+    this.style,
+    this.textAlign,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Tooltip(
       message: '$tooltip',
-      child: Text('$text', style: style, textAlign: textAlign ?? TextAlign.center),
+      child: Text(
+        '$text',
+        style: style,
+        textAlign: textAlign ?? TextAlign.center,
+      ),
     );
   }
 }

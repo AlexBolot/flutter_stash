@@ -24,7 +24,23 @@ class SplashScreen extends StatefulWidget {
 
   final List<Function> loadFunctions;
 
-  const SplashScreen({this.title = '', this.nextRouteName = '', this.nextRoute, this.loadFunctions = const []});
+  /// <br>
+  /// Constructor of SplashScreen Page
+  ///
+  /// * [title] - Welcoming text displayed during loading time
+  /// * [nextRouteName] - Used to navigate to the next page
+  /// * [nextRoute] - Used to navigate to the next page
+  /// * [loadFunctions] - List of functions to call before navigating to next page
+  ///
+  /// Note : if both [nextRouteName] and [nextRoute] are not null,
+  /// [nextRouteName] will be used.
+  ///
+  const SplashScreen({
+    this.title = '',
+    this.nextRouteName = '',
+    this.nextRoute,
+    this.loadFunctions = const [],
+  });
 
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -76,7 +92,11 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               margin: EdgeInsets.only(top: screenHeight * 2 / 5),
               width: double.infinity,
               height: screenHeight * 3 / 5,
-              child: Center(child: Container(child: loader)),
+              child: Center(
+                child: Container(
+                  child: loader,
+                ),
+              ),
             ),
           ],
         ),

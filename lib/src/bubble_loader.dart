@@ -44,7 +44,8 @@ class BubbleLoader extends StatefulWidget {
   _BubbleLoaderState createState() => _BubbleLoaderState();
 }
 
-class _BubbleLoaderState extends State<BubbleLoader> with SingleTickerProviderStateMixin {
+class _BubbleLoaderState extends State<BubbleLoader>
+    with SingleTickerProviderStateMixin {
   Animation<double> rotation;
 
   /// Radius of the loader circle
@@ -78,7 +79,7 @@ class _BubbleLoaderState extends State<BubbleLoader> with SingleTickerProviderSt
     return RotationTransition(
       turns: rotation,
       child: Stack(
-        children: buildList(radius, Theme.of(context).primaryColor),
+        children: buildList(radius, Theme.of(context).primaryColor,),
       ),
     );
   }
