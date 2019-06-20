@@ -15,6 +15,6 @@
 * Upgrading README.md 
 * Upgrading some documentation
 
-## [1.0.0] - Paperwork-day
+## [1.0.1] - Paperwork-day
 
 * Adding simple example for SplashScreen, BubbleLoader and TooltipText 
