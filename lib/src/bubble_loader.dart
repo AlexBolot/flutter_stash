@@ -79,7 +79,7 @@ class _BubbleLoaderState extends State<BubbleLoader>
     return RotationTransition(
       turns: rotation,
       child: Stack(
-        children: buildList(radius, Theme.of(context).primaryColor,),
+        children: buildList(radius, Theme.of(context).primaryColor),
       ),
     );
   }

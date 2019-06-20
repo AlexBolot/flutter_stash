@@ -46,7 +46,8 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   /// Animated [BubbleLoader] used for user feedback
   /// during the duration of the actual data loading
   BubbleLoader loader = BubbleLoader();
