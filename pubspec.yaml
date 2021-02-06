@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  liquid_progress_indicator: ^0.3.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

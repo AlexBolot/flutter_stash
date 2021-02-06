@@ -12,6 +12,9 @@
         - [`BubbleLoader`](#BubbleLoader)
         - [`TooltipText`](#TooltipText)
         - [`Shared`](#Shared)
+        - [`FutureWidget`](#FutureWidget)
+        - [`LiquidLoader`](#LiquidLoader)
+        - [`SwitchWidget`](#SwitchWidget)
     - [Live Templates](#Live-Templates)
         - [`doc`](#doc)
         - [`model`](#model)
@@ -141,6 +144,73 @@ String toFirstUpper(String string)
 // myItems.map((item) => item.price).reduce(sum);
 
 double sum(double a, double b)
+```
+
+---
+
+#### `FutureWidget`
+
+Wrapper around a FutureBuilder 
+
+```csharp
+// Example :
+FutureWidget(
+  future: _myFutureText,
+  buider: (value) {
+    return Text(value),
+  },
+);
+
+_____________________________________________
+
+FutureWidget<String>(
+  future: _myFutureText,
+  initialData : 'temporaryText',
+  buider: (String value) {
+    return Text(value),
+  },
+  loader: CircularProgressIndicator(),
+);
+```
+
+---
+
+#### `LiquidLoader`
+
+Wrapper around a LiquidCircularProgressIndicator to make it auto-animated
+
+```csharp
+// Example :
+LiquidLoader();
+
+_____________________________________________
+
+LiquidLoader(
+  text: 'Loading...',
+  maxHeight: 50.0,
+  maxWidth: 50.0,
+  backgroundColor: Colors.white,
+  borderColor: Colors.blue,
+  borderWidth: 2.0
+);
+```
+
+---
+
+#### `SwitchWidget`
+
+Allows to use a switch between widget based on a give value.
+The type is dynamic so you can use any of your choice 
+
+```csharp
+// Example :
+SwitchWidget(
+  value: 'Hello',
+  cases: {
+    'Hello': Text('Hello World', style: TextStyle(color: Colors.greenAccent)),
+    'Bye': Text('See you soon', style: TextStyle(color: Colors.redAccent)),
+  },
+);
 ```
 
 ---
