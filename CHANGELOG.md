@@ -24,3 +24,7 @@
 * Adding Future Widget
 * Adding Liquid Loader
 * Adding Switch Widget
+
+## [1.1.1] - Switch Widget
+
+* Adding missing export to allow access to Switch Wiget
