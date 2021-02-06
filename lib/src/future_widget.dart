@@ -11,7 +11,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_stash/src/liquid_loader.dart';
 
-typedef BuilderFunction<T> = Widget Function(T data);
+import '../flutter_stash.dart';
 
 class FutureWidget<T> extends StatelessWidget {
   final Future future;

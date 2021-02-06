@@ -28,3 +28,7 @@
 ## [1.1.1] - Switch Widget
 
 * Adding missing export to allow access to Switch Wiget
+
+## [1.1.2] - Switch Widget
+
+* Adding 'defaultBuilder' for Switch Widget
