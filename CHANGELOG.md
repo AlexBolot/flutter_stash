@@ -1,6 +1,6 @@
 ## [0.0.1] - First release !
 
-* This is my first release (every), still needs a proper README
+* This is my first release (ever), still needs a proper README
 
 ## [0.0.2] - Fixing an assertion error
 
@@ -18,3 +18,9 @@
 ## [1.0.1] - Paperwork-day
 
 * Adding simple example for SplashScreen, BubbleLoader and TooltipText 
+
+## [1.1.0] - More content
+
+* Adding Future Widget
+* Adding Liquid Loader
+* Adding Switch Widget
