@@ -199,7 +199,7 @@ LiquidLoader(
 
 #### `SwitchWidget`
 
-Allows to use a switch between widget based on a give value.
+Allows you to use a switch between widget based on a give value.
 The type is dynamic so you can use any of your choice 
 
 ```csharp

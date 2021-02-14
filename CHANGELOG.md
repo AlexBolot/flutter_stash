@@ -32,3 +32,7 @@
 ## [1.1.2] - Switch Widget
 
 * Adding 'defaultBuilder' for Switch Widget
+
+## [1.1.3] - SplashScreen
+
+* Allow to separate methods that you want to 'wait on' and those you don't

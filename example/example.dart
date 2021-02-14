@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     buildSplashScreen() => SplashScreen(
           title: applicationName,
           nextRouteName: HomePage.routeName,
-          loadFunctions: [
+          waitFor: [
             () => print('hey there, I reached the SplashScreen'),
             // wait to simulate real async call
             () async => await Future.delayed(Duration(seconds: 5)),

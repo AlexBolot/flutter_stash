@@ -22,7 +22,11 @@ class SplashScreen extends StatefulWidget {
   final String nextRouteName;
   final MaterialPageRoute nextRoute;
 
-  final List<Function> loadFunctions;
+  /// List of sync or async functions that will be awaited on
+  final List<Function> waitFor;
+
+  /// List of sync or async functions that will NOT be awaited on
+  final List<Function> noWaitFor;
 
   /// <br>
   /// Constructor of SplashScreen Page
@@ -30,7 +34,7 @@ class SplashScreen extends StatefulWidget {
   /// * [title] - Welcoming text displayed during loading time
   /// * [nextRouteName] - Used to navigate to the next page
   /// * [nextRoute] - Used to navigate to the next page
-  /// * [loadFunctions] - List of functions to call before navigating to next page
+  /// * [waitFor] - List of functions to call before navigating to next page
   ///
   /// Note : if both [nextRouteName] and [nextRoute] are not null,
   /// [nextRouteName] will be used.
@@ -39,15 +43,15 @@ class SplashScreen extends StatefulWidget {
     this.title = '',
     this.nextRouteName = '',
     this.nextRoute,
-    this.loadFunctions = const [],
+    this.waitFor = const [],
+    this.noWaitFor = const [],
   });
 
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
-    with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
   /// Animated [BubbleLoader] used for user feedback
   /// during the duration of the actual data loading
   BubbleLoader loader = BubbleLoader();
@@ -107,8 +111,12 @@ class _SplashScreenState extends State<SplashScreen>
 
   applicationLoading() async {
     //Perform all tasks (usually async) here
-    for (Function function in widget.loadFunctions) {
+    for (Function function in widget.waitFor) {
       await function();
+    }
+
+    for (Function function in widget.noWaitFor) {
+      function();
     }
 
     // Stop the loader animation
