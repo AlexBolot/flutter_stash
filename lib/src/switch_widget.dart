@@ -1,12 +1,14 @@
-//..................................................................................................
-// Copyright (c)                                                                                   .
-//                                                                                                 .
-// Coded by : Alexandre BOLOT                                                                      .
-//                                                                                                 .
-// Last Modified : 2/6/21 6:24 PM	                                                                 .
-//                                                                                                 .
-// Contact : bolotalex06@gmail.com                                                                 .
-//..................................................................................................
+/*..............................................................................
+ . Copyright (c)
+ .
+ . The switch_widget.dart class was created by : Alexandre Bolot
+ .
+ . As part of the FlutterStash project
+ .
+ . Last modified : 06/02/2021
+ .
+ . Contact : contact.alexandre.bolot@gmail.com
+ .............................................................................*/
 
 import 'package:flutter/material.dart';
 

@@ -1,12 +1,14 @@
-//..................................................................................................
-// Copyright (c)                                                                                   .
-//                                                                                                 .
-// Coded by : Alexandre BOLOT                                                                      .
-//                                                                                                 .
-// Last Modified : 2/6/21 6:24 PM	                                                                 .
-//                                                                                                 .
-// Contact : bolotalex06@gmail.com                                                                 .
-//..................................................................................................
+/*..............................................................................
+ . Copyright (c)
+ .
+ . The future_widget.dart class was created by : Alexandre Bolot
+ .
+ . As part of the FlutterStash project
+ .
+ . Last modified : 06/02/2021
+ .
+ . Contact : contact.alexandre.bolot@gmail.com
+ .............................................................................*/
 
 import 'package:flutter/material.dart';
 import 'package:flutter_stash/src/liquid_loader.dart';
@@ -19,7 +21,7 @@ class FutureWidget<T> extends StatelessWidget {
   final T initialData;
   final Widget loader;
 
-  const FutureWidget({Key key,this.future, this.builder, this.initialData, this.loader}) : super(key: key);
+  const FutureWidget({Key key, this.future, this.builder, this.initialData, this.loader}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

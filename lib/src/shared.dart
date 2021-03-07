@@ -1,12 +1,14 @@
-//..................................................................................................
-// Copyright (c)                                                                                   .
-//                                                                                                 .
-// Coded by : Alexandre BOLOT                                                                      .
-//                                                                                                 .
-// Last Modified : 6/16/19 1:13 PM	                                                                .
-//                                                                                                 .
-// Contact : bolotalex06@gmail.com                                                                 .
-//..................................................................................................
+/*..............................................................................
+ . Copyright (c)
+ .
+ . The shared.dart class was created by : Alexandre Bolot
+ .
+ . As part of the FlutterStash project
+ .
+ . Last modified : 05/02/2020
+ .
+ . Contact : contact.alexandre.bolot@gmail.com
+ .............................................................................*/
 
 import 'package:flutter/material.dart';
 

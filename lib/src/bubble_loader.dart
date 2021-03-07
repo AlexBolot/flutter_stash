@@ -1,12 +1,14 @@
-//..................................................................................................
-// Copyright (c)                                                                                   .
-//                                                                                                 .
-// Coded by : Alexandre BOLOT                                                                      .
-//                                                                                                 .
-// Last Modified : 1/29/19 6:24 PM	                                                               .
-//                                                                                                 .
-// Contact : bolotalex06@gmail.com                                                                 .
-//..................................................................................................
+/*..............................................................................
+ . Copyright (c)
+ .
+ . The bubble_loader.dart class was created by : Alexandre Bolot
+ .
+ . As part of the FlutterStash project
+ .
+ . Last modified : 29/01/2019
+ .
+ . Contact : contact.alexandre.bolot@gmail.com
+ .............................................................................*/
 
 import 'dart:math';
 
@@ -44,8 +46,7 @@ class BubbleLoader extends StatefulWidget {
   _BubbleLoaderState createState() => _BubbleLoaderState();
 }
 
-class _BubbleLoaderState extends State<BubbleLoader>
-    with SingleTickerProviderStateMixin {
+class _BubbleLoaderState extends State<BubbleLoader> with SingleTickerProviderStateMixin {
   Animation<double> rotation;
 
   /// Radius of the loader circle

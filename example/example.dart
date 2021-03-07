@@ -1,3 +1,15 @@
+/*..............................................................................
+ . Copyright (c)
+ .
+ . The example.dart class was created by : Alexandre Bolot
+ .
+ . As part of the FlutterStash project
+ .
+ . Last modified : 13/02/2021
+ .
+ . Contact : contact.alexandre.bolot@gmail.com
+ .............................................................................*/
+
 import 'package:flutter/material.dart';
 import 'package:flutter_stash/flutter_stash.dart';
 
