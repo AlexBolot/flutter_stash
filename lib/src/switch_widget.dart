@@ -11,12 +11,26 @@
  .............................................................................*/
 
 import 'package:flutter/material.dart';
-
-import '../flutter_stash.dart';
+import 'package:flutter_stash/flutter_stash.dart';
 
 class SwitchWidget<T> extends StatelessWidget {
+  /// Describes which Widget should be built
+  /// based on the given [value]
   final Map<T, Widget> cases;
   final T value;
+
+  /// Describes which Widget should be built
+  /// if none of the [cases] matches the given [value]
+  ///
+  /// Defaults to :
+  ///
+  /// ```
+  /// Container(
+  ///  child: Center(
+  ///    child: Text('$value not found in given cases'),
+  ///  ),
+  /// );
+  /// ```
   final BuilderFunction defaultBuilder;
 
   const SwitchWidget({Key key, this.cases, this.value, this.defaultBuilder}) : super(key: key);
@@ -29,7 +43,7 @@ class SwitchWidget<T> extends StatelessWidget {
       }
 
       if (defaultBuilder != null) {
-        return defaultBuilder(value);
+        return defaultBuilder(context, value);
       }
 
       return Container(

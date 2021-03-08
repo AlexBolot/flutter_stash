@@ -15,6 +15,7 @@
         - [`FutureWidget`](#FutureWidget)
         - [`LiquidLoader`](#LiquidLoader)
         - [`SwitchWidget`](#SwitchWidget)
+        - [`DropDownList`](#DropDownList)
     - [Live Templates](#Live-Templates)
         - [`doc`](#doc)
         - [`model`](#model)
@@ -210,6 +211,32 @@ SwitchWidget(
     'Hello': Text('Hello World', style: TextStyle(color: Colors.greenAccent)),
     'Bye': Text('See you soon', style: TextStyle(color: Colors.redAccent)),
   },
+);
+```
+
+---
+
+### `DropDownList`
+
+```csharp
+// Example :
+
+DropDownList(
+  values: ['option 1', 'option 2', 'option 3'],
+  value: 'option 1',
+  elevation: 4,
+  hint: Text('Select an option'),
+  isDense: true,
+  onSelect: (value) => print('User selected $value'),
+  itemBuilder: (context, values) => values.map((value) {
+    return DropdownMenuItem(
+      value: value,
+      child: Text(value),
+    );
+  }).toList(),
+  selectedItemBuilder: (context, values) => values.map((value) {
+    return Center(child: Text(value));
+  }).toList(),
 );
 ```
 

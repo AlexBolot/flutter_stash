@@ -36,3 +36,9 @@
 ## [1.1.3] - SplashScreen
 
 * Allow to separate methods that you want to 'wait on' and those you don't
+
+## [1.1.4] - DropDownList
+
+* Adding DropDownList Widget
+* Updating documentation for existing widgets
+* Updating copyright notices in dart files

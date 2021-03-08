@@ -32,9 +32,7 @@ String toFirstUpper(String string) {
 ///
 /// Useful to simplify chained calls :
 ///
-/// ```dart
-///
+/// ```
 /// myItems.map((item) => item.price).reduce(sum);
-///
 /// ```
 double sum(double a, double b) => a + b;

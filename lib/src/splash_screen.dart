@@ -18,10 +18,18 @@ class SplashScreen extends StatefulWidget {
   static const String routeName = "/SplashScreen";
 
   /// Text displayed as title of this view (in the appbar)
-  /// Default is empty string
+  ///
+  /// Defaults to an empty string
   final String title;
 
+  /// The name of the route to Navigate towards when everything is loaded
+  ///
+  /// If null, the field [nextRoute] will be used instead
   final String nextRouteName;
+
+  /// The MaterialPageRoute used to Navigate when everything is loaded
+  ///
+  /// Only used if the field [nextRouteName] is null
   final MaterialPageRoute nextRoute;
 
   /// List of sync or async functions that will be awaited on
@@ -30,24 +38,13 @@ class SplashScreen extends StatefulWidget {
   /// List of sync or async functions that will NOT be awaited on
   final List<Function> noWaitFor;
 
-  /// <br>
-  /// Constructor of SplashScreen Page
-  ///
-  /// * [title] - Welcoming text displayed during loading time
-  /// * [nextRouteName] - Used to navigate to the next page
-  /// * [nextRoute] - Used to navigate to the next page
-  /// * [waitFor] - List of functions to call before navigating to next page
-  ///
-  /// Note : if both [nextRouteName] and [nextRoute] are not null,
-  /// [nextRouteName] will be used.
-  ///
   const SplashScreen({
     this.title = '',
-    this.nextRouteName = '',
+    this.nextRouteName,
     this.nextRoute,
     this.waitFor = const [],
     this.noWaitFor = const [],
-  });
+  }) : assert(nextRouteName != null || nextRoute != null);
 
   @override
   _SplashScreenState createState() => _SplashScreenState();
