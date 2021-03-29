@@ -1,10 +1,10 @@
 name: flutter_stash
 description: "I created this Flutter-package to gather Widgets, Views and methods that I frequently use between projects."
-version: 1.1.4
-homepage: https://github.com/AlexBolot/FlutterStash
+version: 1.2.0-nullsafety
+homepage: https://github.com/AlexBolot/flutter_stash
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:

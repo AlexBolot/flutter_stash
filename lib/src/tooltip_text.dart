@@ -18,12 +18,12 @@ import 'package:flutter/material.dart';
 /// on the displayed text widget.
 class TooltipText extends StatelessWidget {
   final String text;
-  final String tooltip;
-  final TextStyle style;
-  final TextAlign textAlign;
+  final String? tooltip;
+  final TextStyle? style;
+  final TextAlign? textAlign;
 
   const TooltipText({
-    @required this.text,
+    required this.text,
     this.tooltip,
     this.style,
     this.textAlign,

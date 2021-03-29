@@ -14,15 +14,15 @@ import 'package:flutter/material.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 
 class LiquidLoader extends StatefulWidget {
-  final String text;
-  final Color backgroundColor;
-  final Color borderColor;
-  final double borderWidth;
-  final double maxWidth;
-  final double maxHeight;
+  final String? text;
+  final Color? backgroundColor;
+  final Color? borderColor;
+  final double? borderWidth;
+  final double? maxWidth;
+  final double? maxHeight;
 
   const LiquidLoader({
-    Key key,
+    Key? key,
     this.text,
     this.backgroundColor,
     this.borderColor,
@@ -36,8 +36,8 @@ class LiquidLoader extends StatefulWidget {
 }
 
 class _LiquidLoaderState extends State<LiquidLoader> with SingleTickerProviderStateMixin {
-  Animation<double> animation;
-  AnimationController controller;
+  late Animation<double> animation;
+  late AnimationController controller;
 
   @override
   void initState() {

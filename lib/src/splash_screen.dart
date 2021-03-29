@@ -25,12 +25,12 @@ class SplashScreen extends StatefulWidget {
   /// The name of the route to Navigate towards when everything is loaded
   ///
   /// If null, the field [nextRoute] will be used instead
-  final String nextRouteName;
+  final String? nextRouteName;
 
   /// The MaterialPageRoute used to Navigate when everything is loaded
   ///
   /// Only used if the field [nextRouteName] is null
-  final MaterialPageRoute nextRoute;
+  final MaterialPageRoute? nextRoute;
 
   /// List of sync or async functions that will be awaited on
   final List<Function> waitFor;
@@ -123,9 +123,9 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
     // Navigate to the next page here
     if (widget.nextRouteName != null)
-      Navigator.of(context).pushReplacementNamed(widget.nextRouteName);
+      Navigator.of(context).pushReplacementNamed(widget.nextRouteName!);
     else if (widget.nextRoute != null)
-      Navigator.of(context).push(widget.nextRoute);
+      Navigator.of(context).push(widget.nextRoute!);
     else
       throw 'Both [nextRouteName] and [nextRoute] are null !\n'
           'Unable to navigate out of ${this.runtimeType}';

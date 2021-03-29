@@ -16,8 +16,8 @@ import 'package:flutter_stash/flutter_stash.dart';
 class SwitchWidget<T> extends StatelessWidget {
   /// Describes which Widget should be built
   /// based on the given [value]
-  final Map<T, Widget> cases;
-  final T value;
+  final Map<T, Widget>? cases;
+  final T? value;
 
   /// Describes which Widget should be built
   /// if none of the [cases] matches the given [value]
@@ -31,19 +31,19 @@ class SwitchWidget<T> extends StatelessWidget {
   ///  ),
   /// );
   /// ```
-  final BuilderFunction defaultBuilder;
+  final BuilderFunction? defaultBuilder;
 
-  const SwitchWidget({Key key, this.cases, this.value, this.defaultBuilder}) : super(key: key);
+  const SwitchWidget({Key? key, this.cases, this.value, this.defaultBuilder}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Builder(builder: (context) {
-      if (cases.containsKey(value)) {
-        return cases[value];
+      if (cases!.containsKey(value)) {
+        return cases![value!]!;
       }
 
       if (defaultBuilder != null) {
-        return defaultBuilder(context, value);
+        return defaultBuilder!(context, value);
       }
 
       return Container(

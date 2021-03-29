@@ -1,5 +1,5 @@
 
-# Flutter Stash ![pull-requests-badge](https://img.shields.io/badge/pull--requests-welcome-success.svg)
+# flutter_stash ![pull-requests-badge](https://img.shields.io/badge/pull--requests-welcome-success.svg)
 
 > Created by Alexandre Bolot on 16/06/2019
 

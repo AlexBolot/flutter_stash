@@ -32,7 +32,7 @@ import 'package:flutter/material.dart';
 /// it avoids background use of 'SetState' causing warnings, errors, and efficiency loss
 ///
 class BubbleLoader extends StatefulWidget {
-  AnimationController controller;
+  AnimationController? controller;
 
   /// Forces the state to clean and dispose
   /// (not forcefully)
@@ -47,7 +47,7 @@ class BubbleLoader extends StatefulWidget {
 }
 
 class _BubbleLoaderState extends State<BubbleLoader> with SingleTickerProviderStateMixin {
-  Animation<double> rotation;
+  late Animation<double> rotation;
 
   /// Radius of the loader circle
   double radius = 30;
@@ -66,13 +66,13 @@ class _BubbleLoaderState extends State<BubbleLoader> with SingleTickerProviderSt
 
     rotation = Tween(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
-        parent: widget.controller,
+        parent: widget.controller!,
         curve: Interval(0.0, 1.0, curve: Curves.linear),
       ),
     );
 
-    widget.controller.addListener(() => setState(() {}));
-    widget.controller.repeat();
+    widget.controller!.addListener(() => setState(() {}));
+    widget.controller!.repeat();
   }
 
   @override
@@ -124,8 +124,8 @@ class _BubbleLoaderState extends State<BubbleLoader> with SingleTickerProviderSt
 /// Simple stateless widget representing a colored circle on the screen.
 ///
 class _Dot extends StatelessWidget {
-  final double radius;
-  final Color color;
+  final double? radius;
+  final Color? color;
 
   const _Dot({this.radius, this.color});
 

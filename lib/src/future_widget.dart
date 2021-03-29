@@ -20,7 +20,7 @@ class FutureWidget<T> extends StatelessWidget {
   ///
   /// When the future is resolved, the value
   /// will be passed to the [builder] callback
-  final Future future;
+  final Future? future;
 
   /// The callback used to build the content of this widget
   ///
@@ -31,24 +31,24 @@ class FutureWidget<T> extends StatelessWidget {
   /// using the given [loader].
   ///
   /// * If no [loader] is provided, a [LiquidLoader] is used.
-  final BuilderFunction<T> builder;
+  final BuilderFunction<T>? builder;
 
   /// The initial data used by the [builder] callback until the [future] resolves
-  final T initialData;
+  final T? initialData;
 
   /// The widget to display if the [future] hasn't resolved yet and [initialData] is `null`
-  final Widget loader;
+  final Widget? loader;
 
-  const FutureWidget({Key key, this.future, this.builder, this.initialData, this.loader}) : super(key: key);
+  const FutureWidget({Key? key, this.future, this.builder, this.initialData, this.loader}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<T>(
-      future: future,
+      future: future as Future<T>?,
       initialData: initialData,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return builder(context, snapshot.data);
+          return builder!(context, snapshot.data);
         }
         return loader ?? LiquidLoader();
       },

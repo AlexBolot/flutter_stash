@@ -12,22 +12,22 @@
 
 import 'package:flutter/material.dart';
 
-typedef ItemBuilder = List<DropdownMenuItem> Function(BuildContext context, List<String> values);
-typedef SelectedItemsBuilder<T> = List<Widget> Function(BuildContext context, List<T> data);
+typedef ItemBuilder = List<DropdownMenuItem> Function(BuildContext context, List<String>? values);
+typedef SelectedItemsBuilder = List<Widget> Function(BuildContext context, List<String>? values);
 
 class DropDownList extends StatelessWidget {
   /// List of values that the user can select
-  final List<String> values;
+  final List<String>? values;
 
   /// The value of the currently selected [DropdownMenuItem].
   ///
   /// It has contained in the [values] field.
-  final String value;
+  final String? value;
 
   /// Callback applied when the user selects a value.
   ///
   /// Defaults to a simple `print(value)`
-  final ValueChanged<String> onSelect;
+  final ValueChanged<String?> onSelect;
 
   /// Code used to build the items in list when the DropDownList is expanded
   ///
@@ -41,7 +41,7 @@ class DropDownList extends StatelessWidget {
   ///   );
   /// }).toList()
   /// ```
-  final ItemBuilder itemBuilder;
+  final ItemBuilder? itemBuilder;
 
   /// Code used to build the selected item displayed when the DropDownList is collapsed
   ///
@@ -55,12 +55,12 @@ class DropDownList extends StatelessWidget {
   /// }).toList();
   ///
   /// ```
-  final SelectedItemsBuilder selectedItemBuilder;
+  final SelectedItemsBuilder? selectedItemBuilder;
 
   /// The widget displayed under the DropDownList when it's collapsed
   ///
   /// Defaults to a simple line colored : Color(0xFFBDBDBD)
-  final Widget underline;
+  final Widget? underline;
 
   /// The z-coordinate at which to place the menu when open.
   ///
@@ -73,10 +73,10 @@ class DropDownList extends StatelessWidget {
   final bool isDense;
 
   /// The widget displayed when no value is selected
-  final Widget hint;
+  final Widget? hint;
 
-  const DropDownList({
-    Key key,
+  DropDownList({
+    Key? key,
     this.values,
     this.value,
     this.onSelect = print,
@@ -88,22 +88,22 @@ class DropDownList extends StatelessWidget {
     this.selectedItemBuilder,
   }) : super(key: key);
 
-  _defaultItemBuilder(_, values) {
-    return values.map((value) {
+  final ItemBuilder _defaultItemBuilder = (_, values) {
+    return values!.map((value) {
       return DropdownMenuItem(
         value: value,
         child: Text(value),
       );
     }).toList();
-  }
+  };
 
-  _defaultSelectedItemBuilder(_, values) {
-    return values.map((value) {
+  final SelectedItemsBuilder _defaultSelectedItemBuilder = (_, values) {
+    return values!.map((value) {
       return Center(
         child: Text(value),
       );
     }).toList();
-  }
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +116,7 @@ class DropDownList extends StatelessWidget {
       elevation: elevation,
       value: value,
       items: itemBuilder(context, values),
-      onChanged: onSelect,
+      onChanged: (dynamic value) => onSelect(value),
       isDense: isDense,
       selectedItemBuilder: (BuildContext context) => selectedItemBuilder(context, values),
     );

@@ -42,3 +42,11 @@
 * Adding DropDownList Widget
 * Updating documentation for existing widgets
 * Updating copyright notices in dart files
+
+## [1.1.5] - Better Documentation
+
+* Adding linters to the project and updating public api doc
+
+## [1.2.0-nullsafety]
+
+* Migrating package to null-safety
